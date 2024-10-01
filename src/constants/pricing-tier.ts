@@ -1,6 +1,6 @@
 export interface Tier {
   name: string;
-  id: 'mobile' | 'super' | 'premium';
+  id: 'starter' | 'pro' | 'advanced';
   icon: string;
   description: string;
   features: string[];
@@ -11,7 +11,7 @@ export interface Tier {
 export const PricingTier: Tier[] = [
   {
     name: 'Mobile',
-    id: 'mobile',
+    id: 'starter',
     icon: '/assets/icons/price-tiers/free-icon.svg',
     description: 'Ideal for individuals who want to get started with simple design tasks.',
     features: ['1 workspace', 'Limited collaboration', 'Export to PNG and SVG'],
@@ -20,7 +20,7 @@ export const PricingTier: Tier[] = [
   },
   {
     name: 'Super',
-    id: 'super',
+    id: 'pro',
     icon: '/assets/icons/price-tiers/basic-icon.svg',
     description: 'Enhanced design tools for scaling teams who need more flexibility.',
     features: ['Integrations', 'Unlimited workspaces', 'Advanced editing tools', 'Everything in Starter'],
@@ -29,7 +29,7 @@ export const PricingTier: Tier[] = [
   },
   {
     name: 'Premium',
-    id: 'premium',
+    id: 'advanced',
     icon: '/assets/icons/price-tiers/pro-icon.svg',
     description: 'Powerful tools designed for extensive collaboration and customization.',
     features: [
