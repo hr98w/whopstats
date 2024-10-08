@@ -54,7 +54,7 @@ export function SubscriptionCards({ subscriptions, className }: Props) {
               <CardContent className={'p-0 flex justify-between gap-3 flex-wrap xl:flex-nowrap'}>
                 <div className={'flex flex-col gap-3'}>
                   <div className="text-base leading-6 text-secondary">{subscriptionItem.product.description}</div>
-                  <div className="text-base leading-[16px] text-primary">
+                  <div className="text-base leading-[16px] text-default-500">
                     {formattedPrice}
                     {frequency}
                   </div>

@@ -4,12 +4,16 @@ import { useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useUserInfo } from '@/hooks/useUserInfo';
 import '../../styles/home-page.css';
-import { LocalizationBanner } from '@/components/home/header/localization-banner';
 import Header from '@/components/home/header/header';
 import { HeroSection } from '@/components/home/hero-section/hero-section';
 import { Pricing } from '@/components/home/pricing/pricing';
 import { HomePageBackground } from '@/components/gradients/home-page-background';
 import { Footer } from '@/components/home/footer/footer';
+import ExampleTable from '../stats/example-table';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import FlickeringGrid from '@/components/ui/flickering-grid';
+import SparklesText from '@/components/ui/sparkles-text';
 
 export function HomePage() {
   const supabase = createClient();
@@ -18,12 +22,54 @@ export function HomePage() {
 
   return (
     <>
-      <LocalizationBanner country={country} onCountryChange={setCountry} />
+      <FlickeringGrid
+        className="fixed inset-0 z-[0]"
+        squareSize={4}
+        gridGap={6}
+        color="#6B7280"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
       <div>
-        <HomePageBackground />
         <Header user={user} />
+
         <HeroSection />
-        <Pricing country={country} />
+
+        <div className="flex justify-center pt-12 pb-72">
+          <div className="flex space-x-4">
+            <Button variant={'default'} asChild={true}>
+              <Link href={'/#pricing'}>Get Access Now</Link>
+            </Button>
+
+            <Button variant={'link'} asChild={true}>
+              <Link href={'/#example-table'} className="text-default-500">
+                Start Previewing {'->'}
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        <div id="example-table" className="pb-36">
+          <div className="flex flex-col items-center my-8">
+            <SparklesText text="Previewing" className="text-center text-4xl" />
+            <p className="text-large text-center text-default-500">
+              This is an example of how the statistics will appear
+            </p>
+            <p className="text-large text-center text-default-500">
+              WhopStats contains over 8,000 Whop products, which we update on a weekly basis
+            </p>
+          </div>
+          <ExampleTable />
+        </div>
+
+        <div id="pricing" className="pt-12 pb-36">
+          <div className="flex flex-col items-center my-8">
+            <SparklesText text="Pricing" className="text-center text-4xl" />
+            <p className="text-large text-center text-default-500">Get access to our pricing plan</p>
+          </div>
+          <Pricing country={country} />
+        </div>
+
         <Footer />
       </div>
     </>

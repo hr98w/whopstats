@@ -1,17 +1,18 @@
-import { Inter } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+
 import '../styles/globals.css';
 import '../styles/layout.css';
 import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
-
-const inter = Inter({ subsets: ['latin'] });
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://paddle-billing.vercel.app'),
-  title: 'AeroEdit',
+  metadataBase: new URL('https://whopstats.com'),
+  title: 'WhopStats - Whop Product Reviews & Sales Insights',
   description:
-    'AeroEdit is a powerful team design collaboration app and image editor. With plans for businesses of all sizes, streamline your workflow with real-time collaboration, advanced editing tools, and seamless project management.',
+    'Explore WhopStats for in-depth product reviews and sales data on Whop.com, helping creators and developers find inspiration and refine their strategies.',
 };
 
 export default function RootLayout({
@@ -21,9 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={'min-h-full dark'}>
-      <body className={inter.className}>
-        {children}
-        <Toaster />
+      <body className={GeistSans.className}>
+        <ThemeProvider>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'AeroEdit - Error',
+  title: 'WhopStats - Error',
 };
 
 export default function ErrorPage() {

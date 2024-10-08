@@ -5,16 +5,18 @@ import { cva, type VariantProps } from 'class-variance-authority';
 import { cn } from '@/lib/utils';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-medium ring-offset-background transition-colors focus:ring-ring focus:ring-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md text-md font-medium ring-offset-background transition-colors focus:ring-ring focus:ring-1 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 z-10',
   {
     variants: {
       variant: {
         default: 'bg-primary text-primary-foreground hover:bg-primary/90',
         destructive: 'bg-destructive text-destructive-foreground hover:bg-destructive/90',
         outline: 'border border-input bg-background hover:bg-accent hover:text-accent-foreground',
-        secondary: 'relative bg-[#fcfcfc33] text-white secondary-button-animation disabled:bg-[#191A1A]',
+        secondary: 'relative bg-[#333333] text-white secondary-button-animation disabled:bg-[#191A1A]',
+        // blow secondary is for dark mode
+        // secondary: 'relative bg-[#fcfcfc33] text-white secondary-button-animation disabled:bg-[#191A1A]',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
-        link: 'text-primary underline-offset-4 hover:underline',
+        link: 'text-secondary underline-offset-4 hover:underline',
       },
       size: {
         default: 'h-11 px-5 py-[10px]',
