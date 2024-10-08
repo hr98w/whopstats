@@ -136,8 +136,6 @@ export default function StatsTable() {
     }
   };
 
-  const colors = ['primary', 'secondary', 'success', 'warning', 'danger'];
-
   const hashString = (str: string): number => {
     if (!str) return 0;
     let hash = 0;
@@ -148,8 +146,9 @@ export default function StatsTable() {
     return Math.abs(hash);
   };
 
-  // Function to get color based on label1
-  const getLabelColor = (label: string): string => {
+  const colors = ['primary', 'secondary', 'success', 'warning', 'danger'] as const;
+
+  const getLabelColor = (label: string): (typeof colors)[number] => {
     const index = hashString(label) % colors.length;
     return colors[index];
   };
@@ -295,15 +294,15 @@ export default function StatsTable() {
                             <span className="ml-2">{row[column]}</span>
                           </div>
                         ) : column === 'category' ? (
-                          row.label1 ? (
-                            <Chip color={getLabelColor(row.label1)} variant="flat">
-                              {row.label1}
+                          row['label1'] ? (
+                            <Chip color={getLabelColor(row['label1'])} variant="flat">
+                              {row['label1']}
                             </Chip>
                           ) : null
                         ) : column === 'sub_category' ? (
-                          row.label2 && (
+                          row['label2'] && (
                             <Chip color="default" variant="flat">
-                              {row.label2}
+                              {row['label2']}
                             </Chip>
                           )
                         ) : (

@@ -141,8 +141,6 @@ export default function ExampleTable() {
     }
   };
 
-  const colors = ['primary', 'secondary', 'success', 'warning', 'danger'];
-
   const hashString = (str: string): number => {
     if (!str) return 0;
     let hash = 0;
@@ -153,8 +151,9 @@ export default function ExampleTable() {
     return Math.abs(hash);
   };
 
-  // 根据 label1 获取颜色
-  const getLabelColor = (label: string): string => {
+  const colors = ['primary', 'secondary', 'success', 'warning', 'danger'] as const;
+
+  const getLabelColor = (label: string): (typeof colors)[number] => {
     const index = hashString(label) % colors.length;
     return colors[index];
   };
