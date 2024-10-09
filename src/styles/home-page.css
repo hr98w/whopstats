@@ -173,3 +173,19 @@
   background: #fff800;
   filter: blur(32px);
 }
+
+.section-divider {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(65, 75, 78, 0) 0%, #414b4e 49.5%, rgba(65, 75, 78, 0) 100%);
+}
+.section-divider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 248px;
+  height: 1px;
+  background: #414b4e;
+}
