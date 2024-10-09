@@ -7,6 +7,7 @@ import { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
+import { NextUIProvider } from '@nextui-org/react';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whopstats.com'),
@@ -23,10 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={'min-h-full dark'}>
       <body className={GeistSans.className}>
-        <ThemeProvider>
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <NextUIProvider>
+          <ThemeProvider>
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </NextUIProvider>
       </body>
     </html>
   );
