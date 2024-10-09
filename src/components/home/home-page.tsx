@@ -7,7 +7,6 @@ import '../../styles/home-page.css';
 import Header from '@/components/home/header/header';
 import { HeroSection } from '@/components/home/hero-section/hero-section';
 import { Pricing } from '@/components/home/pricing/pricing';
-import { HomePageBackground } from '@/components/gradients/home-page-background';
 import { Footer } from '@/components/home/footer/footer';
 import ExampleTable from '../stats/example-table';
 import Link from 'next/link';
@@ -38,7 +37,7 @@ export function HomePage() {
         <div className="flex justify-center pt-12 pb-72">
           <div className="flex space-x-4">
             <Button variant={'default'} asChild={true}>
-              <Link href={'/#pricing'}>Get Access Now</Link>
+              <Link href={'/stats'}>Explore WhopStats</Link>
             </Button>
 
             <Button variant={'link'} asChild={true}>
@@ -65,7 +64,9 @@ export function HomePage() {
         <div id="pricing" className="pt-12 pb-36">
           <div className="flex flex-col items-center my-8">
             <SparklesText text="Pricing" className="text-center text-4xl" />
-            <p className="text-large text-center text-default-500">Get access to our pricing plan</p>
+            <p className="text-large text-center text-default-500">
+              Get full access to WhopStats by subscribing to our pricing plan
+            </p>
           </div>
           <Pricing country={country} />
         </div>
