@@ -1,7 +1,7 @@
 .dashboard-background-base {
   width: 100%;
   position: absolute;
-  z-index: 0;
+  z-index: -1;
 }
 
 .grain-background {
