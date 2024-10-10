@@ -57,7 +57,9 @@ export function HomePage() {
 
         <div id="features" className="pb-24">
           <div className="flex flex-col items-center pt-16">
-            <SparklesText text="Features" className="text-center text-4xl" />
+            <h2>
+              <SparklesText text="Features" className="text-center text-4xl" />
+            </h2>
           </div>
           <FeaturesSection />
         </div>
@@ -66,7 +68,9 @@ export function HomePage() {
 
         <div id="example-table" className="pb-36">
           <div className="flex flex-col items-center p-16">
-            <SparklesText text="Previewing" className="text-center text-4xl text-default-600" />
+            <h2>
+              <SparklesText text="Previewing" className="text-center text-4xl text-default-600" />
+            </h2>
             <p className="text-large text-center pt-4 text-default-600">
               This is an example of how the statistics will appear
             </p>
@@ -81,7 +85,9 @@ export function HomePage() {
 
         <div id="pricing" className="pb-36 text-default-600">
           <div className="flex flex-col items-center p-16">
-            <SparklesText text="Pricing" className="text-center text-4xl" />
+            <h2>
+              <SparklesText text="Pricing" className="text-center text-4xl" />
+            </h2>
             <p className="text-large text-center pt-4">
               Get full access to WhopStats by subscribing to our pricing plan
             </p>
@@ -93,9 +99,9 @@ export function HomePage() {
 
         <div id="faq" className="pb-32">
           <div className="flex flex-col items-center my-8 pt-8">
-            <h3>
+            <h2>
               <SparklesText text="Frequent Asked Questions" className="text-center text-4xl" />
-            </h3>
+            </h2>
           </div>
           <FAQ />
         </div>

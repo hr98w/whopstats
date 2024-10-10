@@ -44,11 +44,11 @@ export function FeaturesSection() {
     },
     {
       title: 'Revenue Estimations',
-      description: 'WhopStats estimates revenuws for all products, get a true sense of what’s working in the market.',
+      description: 'WhopStats estimates revenues for all products, get a true sense of what’s working in the market.',
       icon: <IconAdjustmentsBolt />,
     },
     {
-      title: 'Built for you',
+      title: 'Built for you with love',
       description: 'If you have any ideas or suggestions, please let us know.',
       icon: <IconHeart />,
     },
