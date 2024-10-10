@@ -27,7 +27,7 @@ import {
   TableRow,
   Tooltip,
 } from '@nextui-org/react';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 export default function StatsTable() {
   const [data, setData] = useState([]);
@@ -36,7 +36,7 @@ export default function StatsTable() {
   const [isLoading, setIsLoading] = useState(false);
   const [sortBy, setSortBy] = useState('');
   const [order, setOrder] = useState('desc');
-  const rowsPerPage = 20;
+  const [rowsPerPage, setRowsPerPage] = useState(20);
 
   const columnsToShow = [
     'name',
@@ -75,7 +75,7 @@ export default function StatsTable() {
   useEffect(() => {
     fetchData();
     fetchLabel1Options();
-  }, [currentPage, sortBy, order, selectedLabel1, scoreLow, scoreHigh, reviewCountLimit]);
+  }, [currentPage, sortBy, order, selectedLabel1, scoreLow, scoreHigh, reviewCountLimit, rowsPerPage]);
 
   const fetchLabel1Options = async () => {
     try {
@@ -156,6 +156,8 @@ export default function StatsTable() {
   const resetToFirstPage = () => {
     setCurrentPage(1);
   };
+
+  const totalPages = useMemo(() => Math.ceil(totalCount / rowsPerPage), [totalCount, rowsPerPage]);
 
   return (
     <div className="w-full px-4 xl:px-12 2xl:px-24 pb-8">
@@ -315,12 +317,34 @@ export default function StatsTable() {
               </TableBody>
             </Table>
           </div>
-          <div className="flex justify-center mt-4">
-            <Pagination
-              total={Math.ceil(totalCount / rowsPerPage)}
-              page={currentPage}
-              onChange={(page) => setCurrentPage(page)}
-            />
+          <div className="flex justify-between items-center mt-4">
+            <div className="w-1/3"></div> {/* Spacer */}
+            <div className="flex justify-center w-1/3">
+              <Pagination total={totalPages} page={currentPage} onChange={(page) => setCurrentPage(page)} />
+            </div>
+            <div className="flex justify-end w-1/3">
+              <div className="flex items-center space-x-2">
+                {isLoading && <Spinner size="sm" />}
+                <p>rows/page:</p>
+                <Select
+                  size="sm"
+                  defaultSelectedKeys={[rowsPerPage.toString()]}
+                  value={rowsPerPage.toString()}
+                  onChange={(e) => {
+                    console.log(Number(e.target.value));
+                    setRowsPerPage(Number(e.target.value));
+                    setCurrentPage(1);
+                  }}
+                  className="min-w-[70px]"
+                >
+                  {[10, 20, 50, 100].map((pageSize) => (
+                    <SelectItem key={pageSize.toString()} value={pageSize.toString()}>
+                      {pageSize.toString()}
+                    </SelectItem>
+                  ))}
+                </Select>
+              </div>
+            </div>
           </div>
         </>
       )}
