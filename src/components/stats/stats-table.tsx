@@ -158,7 +158,7 @@ export default function StatsTable() {
   };
 
   return (
-    <div className="w-full px-4 xl:px-12 2xl:px-24">
+    <div className="w-full px-4 xl:px-12 2xl:px-24 pb-8">
       <div className="mb-4 flex flex-wrap gap-4">
         <Select
           label="Filter by Category"

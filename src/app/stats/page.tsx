@@ -14,7 +14,6 @@ export default function App() {
     <>
       <Header user={user} />
       <StatsTable />
-      <Footer />
     </>
   );
 }

@@ -8,6 +8,7 @@ import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { NextUIProvider } from '@nextui-org/react';
+import { Footer } from '@/components/home/footer/footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whopstats.com'),
@@ -26,7 +27,8 @@ export default function RootLayout({
       <body className={GeistSans.className}>
         <NextUIProvider>
           <ThemeProvider>
-            {children}
+            <div className="flex-grow flex flex-col min-h-screen">{children}</div>
+            <Footer />
             <Toaster />
           </ThemeProvider>
         </NextUIProvider>

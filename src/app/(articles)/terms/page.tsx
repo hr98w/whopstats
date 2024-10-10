@@ -43,7 +43,7 @@ export default function Article() {
           use Paddle as our payment processor. All payment information is handled securely by Paddle.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Cancellation and Refunds</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Cancellation and Refunds Policy</h2>
         <p className="mb-6 text-default-600">
           You may cancel your subscription at any time. Refunds are handled on a case-by-case basis and are not
           guaranteed. Please contact us for any refund requests.

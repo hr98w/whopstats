@@ -7,7 +7,6 @@ import '../../styles/home-page.css';
 import Header from '@/components/home/header/header';
 import { HeroSection } from '@/components/home/hero-section/hero-section';
 import { Pricing } from '@/components/home/pricing/pricing';
-import { Footer } from '@/components/home/footer/footer';
 import ExampleTable from '../stats/example-table';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -105,8 +104,6 @@ export function HomePage() {
           </div>
           <FAQ />
         </div>
-
-        <Footer />
       </div>
     </>
   );

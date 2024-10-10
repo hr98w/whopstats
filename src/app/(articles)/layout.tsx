@@ -16,7 +16,6 @@ export default function Layout({ children }: Props) {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header user={user} />
       <main style={{ flex: 1 }}>{children}</main>
-      <Footer />
     </div>
   );
 }
