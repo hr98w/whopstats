@@ -40,13 +40,13 @@ export default function Article() {
           <li>To provide and maintain our service</li>
           <li>To manage your account and subscription</li>
           <li>To send you important updates about our service</li>
-          <li>To deliver newsletters you've opted into</li>
+          <li>To deliver newsletters you&apos;ve opted into</li>
         </ul>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">3. Payment Processing</h2>
         <p className="mb-6 text-default-600">
-          We use Paddle as our payment processor. When you make a payment, you will be redirected to Paddle's secure
-          payment page. We do not store your payment information on our servers.
+          We use Paddle as our payment processor. When you make a payment, you will be redirected to Paddle&apos;s
+          secure payment page. We do not store your payment information on our servers.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">4. Data Protection</h2>
