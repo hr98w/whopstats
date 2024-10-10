@@ -51,10 +51,14 @@ export default function Article() {
           immediate termination of your account.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Subscription and Payments</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Payments and Refunds</h2>
         <p className="mb-6 text-default-600">
           WhopStats is a paid service. By subscribing, you agree to pay all fees associated with your subscription. We
           use Paddle as our payment processor. All payment information is handled securely by Paddle.
+        </p>
+        <p className="mb-6 text-default-600">
+          You may cancel your subscription at any time. Refunds are handled on a case-by-case basis and are not
+          guaranteed. Please contact us for any refund requests.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">6. Intellectual Property</h2>
@@ -80,7 +84,7 @@ export default function Article() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">10. Contact Information</h2>
         <p className="mb-6 text-default-600">
-          If you have any questions about these Terms of Use, please contact us at legendwhr@gmail.com.
+          If you have any questions about these Terms of Use, please contact us at devhaoran@gmail.com.
         </p>
       </div>
     </div>
