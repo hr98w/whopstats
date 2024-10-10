@@ -29,7 +29,7 @@ export function Pricing({ country }: Props) {
   }, []);
   console.log(prices);
   return (
-    <div className="mx-auto max-w-7xl relative px-[32px] flex flex-col items-center justify-between">
+    <div className="mx-auto max-w-4xl relative px-[32px] flex flex-col items-center justify-between">
       {/* <Toggle frequency={frequency} setFrequency={setFrequency} /> */}
       <PriceCards frequency={frequency} loading={loading} priceMap={prices} />
     </div>

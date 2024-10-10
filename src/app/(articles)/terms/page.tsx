@@ -34,19 +34,27 @@ export default function Article() {
         <p className="mb-6 text-default-600">
           To access our service, you must create an account. You are responsible for maintaining the confidentiality of
           your account and password. You agree to accept responsibility for all activities that occur under your
-          account.
+          account. Sharing of accounts is strictly prohibited.
         </p>
 
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">4. Subscription and Payments</h2>
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">4. Acceptable Use</h2>
+        <p className="mb-6 text-default-600">
+          You agree not to engage in any activity that disrupts or interferes with our services, including but not
+          limited to: attempting to gain unauthorized access to the service or its related systems or networks,
+          circumventing any rate-limiting systems, or using any robot, spider, scraper or other automated means to
+          access our service.
+        </p>
+
+        <p className="mb-6 text-default-600">
+          We encourage users to report any bugs or vulnerabilities they discover. However, any attempt to exploit these
+          vulnerabilities or engage in activities harmful to the system is strictly prohibited and may result in
+          immediate termination of your account.
+        </p>
+
+        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Subscription and Payments</h2>
         <p className="mb-6 text-default-600">
           WhopStats is a paid service. By subscribing, you agree to pay all fees associated with your subscription. We
           use Paddle as our payment processor. All payment information is handled securely by Paddle.
-        </p>
-
-        <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">5. Cancellation and Refunds Policy</h2>
-        <p className="mb-6 text-default-600">
-          You may cancel your subscription at any time. Refunds are handled on a case-by-case basis and are not
-          guaranteed. Please contact us for any refund requests.
         </p>
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">6. Intellectual Property</h2>
