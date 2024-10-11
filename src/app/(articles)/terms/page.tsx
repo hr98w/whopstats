@@ -84,7 +84,7 @@ export default function Article() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4 text-default-800">10. Contact Information</h2>
         <p className="mb-6 text-default-600">
-          If you have any questions about these Terms of Use, please contact us at devhaoran@gmail.com.
+          If you have any questions about these Terms of Use, please contact us at hi@whopstats.com.
         </p>
       </div>
     </div>

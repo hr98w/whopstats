@@ -46,7 +46,7 @@ export function FAQ() {
     <div>
       <div className="px-8 md:px-32 lg:px-48">
         <p className="text-muted-foreground">
-          Can&apos;t find the answer you&apos;re looking for? Reach out to me at devhaoran@gmail.com.
+          Can&apos;t find the answer you&apos;re looking for? Reach out to me at hi@whopstats.com.
         </p>
         <div className="not-prose mt-4 flex flex-col gap-4 md:mt-8">
           {content.map((item, index) => (
