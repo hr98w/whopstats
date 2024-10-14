@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useUserInfo } from '@/hooks/useUserInfo';
 import '../../styles/home-page.css';
@@ -20,6 +20,14 @@ export function HomePage() {
   const supabase = createClient();
   const { user } = useUserInfo(supabase);
   const [country, setCountry] = useState('US');
+
+  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
 
   return (
     <>
@@ -44,7 +52,11 @@ export function HomePage() {
               </Button>
 
               <Button variant={'link'} asChild={true}>
-                <Link href={'/#example-table'} className="text-default-600">
+                <Link
+                  href={'/#example-table'}
+                  className="text-default-600"
+                  onClick={(e) => scrollToSection(e, 'example-table')}
+                >
                   Start Previewing {'->'}
                 </Link>
               </Button>
