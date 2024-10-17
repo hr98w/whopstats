@@ -9,6 +9,7 @@ import { Toaster } from '@/components/ui/toaster';
 import { ThemeProvider } from '@/components/theme-provider';
 import { NextUIProvider } from '@nextui-org/react';
 import { Footer } from '@/components/home/footer/footer';
+import UmamiAnalytic from '@/components/analytic/UmamiAnalytic';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://whopstats.com'),
@@ -32,6 +33,7 @@ export default function RootLayout({
             <Toaster />
           </ThemeProvider>
         </NextUIProvider>
+        <UmamiAnalytic />
       </body>
     </html>
   );
