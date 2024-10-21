@@ -21,13 +21,13 @@ export function HomePage() {
   const { user } = useUserInfo(supabase);
   const [country, setCountry] = useState('US');
 
-  const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
+  // const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  //   e.preventDefault();
+  //   const element = document.getElementById(id);
+  //   if (element) {
+  //     element.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // }, []);
 
   return (
     <>
@@ -52,11 +52,7 @@ export function HomePage() {
               </Button>
 
               <Button variant={'link'} asChild={true}>
-                <Link
-                  href={'/#example-table'}
-                  className="text-default-600"
-                  onClick={(e) => scrollToSection(e, 'example-table')}
-                >
+                <Link href={'/#example-table'} className="text-default-600">
                   Start Previewing {'->'}
                 </Link>
               </Button>

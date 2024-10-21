@@ -35,6 +35,12 @@ export function PoweredByPaddle() {
               <ArrowUpRight className={'h-4 w-4'} />
             </span>
           </Link>
+          <Link className={'text-sm leading-[14px]'} href={'/blog'} target={'_blank'}>
+            <span className={'flex items-center gap-1'}>
+              Blogs
+              <ArrowUpRight className={'h-4 w-4'} />
+            </span>
+          </Link>
         </div>
       </div>
     </>
