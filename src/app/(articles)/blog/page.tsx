@@ -1,8 +1,8 @@
-import { BlogPosts } from '@/components/blog/posts';
+import { BlogPosts } from '@/app/(articles)/blog/posts';
 
 export const metadata = {
-  title: 'Blog',
-  description: 'Read my blog.',
+  title: 'Blogs - Whopstats.com',
+  description: 'Read the latest blogs from Whopstats.',
 };
 
 export default function Page() {
