@@ -26,9 +26,6 @@ export default async function SuccessPage() {
             </Button>
           </div>
         </div>
-        <div className={'absolute bottom-0 w-full'}>
-          <PoweredByPaddle />
-        </div>
       </div>
     </main>
   );

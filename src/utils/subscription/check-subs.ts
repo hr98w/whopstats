@@ -1,6 +1,7 @@
 import { createClient } from '@/utils/supabase/server';
 import { getCustomerId } from '@/utils/paddle/get-customer-id';
 
+const LIFE_TIME_PRICE_ID = 'pri_01j9nqvh60r3k6axjm9h8q7c0v';
 export async function checkActiveSubscription(): Promise<boolean> {
   const supabase = createClient();
   const customerId = await getCustomerId();
@@ -15,7 +16,15 @@ export async function checkActiveSubscription(): Promise<boolean> {
     .eq('customer_id', customerId)
     .eq('subscription_status', 'active');
 
-  if (error || !subs || subs.length === 0) {
+  // handle lifetime membership
+  const { data: transactions, error: transactionsError } = await supabase
+    .from('transactions')
+    .select('transaction_status')
+    .eq('customer_id', customerId)
+    .eq('price_id', LIFE_TIME_PRICE_ID)
+    .eq('transaction_status', 'completed');
+
+  if ((error || !subs || subs.length === 0) && (transactionsError || !transactions || transactions.length === 0)) {
     return false;
   }
 
