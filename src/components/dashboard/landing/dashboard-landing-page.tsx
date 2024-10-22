@@ -12,7 +12,7 @@ export function DashboardLandingPage() {
       </div>
       <div className={'grid auto-rows-max items-start gap-6'}>
         {/* <DashboardTeamMembersCard /> */}
-        {/* <DashboardTutorialCard /> */}
+        <DashboardTutorialCard />
       </div>
     </div>
   );
