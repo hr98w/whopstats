@@ -29,8 +29,6 @@ create table
     transaction_id text not null,
     transaction_status text not null,
     price_id text null,
-    product_id text null,
-    scheduled_change text null,
     customer_id text not null,
     created_at timestamp with time zone not null default now(),
     updated_at timestamp with time zone not null default now(),
