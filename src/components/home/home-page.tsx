@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import { useUserInfo } from '@/hooks/useUserInfo';
-import '../../styles/home-page.css';
+// import '../../styles/home-page.css';
 import Header from '@/components/home/header/header';
 import { HeroSection } from '@/components/home/hero-section/hero-section';
 import { Pricing } from '@/components/home/pricing/pricing';
@@ -20,14 +20,6 @@ export function HomePage() {
   const supabase = createClient();
   const { user } = useUserInfo(supabase);
   const [country, setCountry] = useState('US');
-
-  // const scrollToSection = useCallback((e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-  //   e.preventDefault();
-  //   const element = document.getElementById(id);
-  //   if (element) {
-  //     element.scrollIntoView({ behavior: 'smooth' });
-  //   }
-  // }, []);
 
   return (
     <>
