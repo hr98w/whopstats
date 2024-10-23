@@ -13,7 +13,7 @@ import createMDX from '@next/mdx';
 const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   images: {
-    domains: ['cdn.simpleicons.org', 'localhost', 'whopstats.vercel.app'],
+    domains: ['cdn.simpleicons.org', 'localhost', 'whopstats.vercel.app', 'whopstats.com'],
   },
 };
 
