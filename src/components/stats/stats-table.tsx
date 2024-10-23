@@ -331,7 +331,6 @@ export default function StatsTable() {
                   defaultSelectedKeys={[rowsPerPage.toString()]}
                   value={rowsPerPage.toString()}
                   onChange={(e) => {
-                    console.log(Number(e.target.value));
                     setRowsPerPage(Number(e.target.value));
                     setCurrentPage(1);
                   }}
