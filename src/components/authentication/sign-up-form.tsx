@@ -17,7 +17,7 @@ export function SignupForm() {
       if (data?.error) {
         toast({ description: 'Something went wrong. Please try again', variant: 'destructive' });
       } else {
-        toast({ description: 'Check your email for a verification link', variant: 'success' });
+        // toast({ description: 'Check your email for a verification link', variant: 'success' });
       }
     });
   }

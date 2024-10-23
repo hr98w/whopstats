@@ -18,6 +18,12 @@ export async function signup(data: FormData) {
     return { error: true };
   }
 
+  // Following are auto login logic if there's no email OTP verification
+  // Remove following auto login logic if you want to use email OTP verification
+  const { error: signInError } = await supabase.auth.signInWithPassword(data);
+  if (signInError) {
+    return { error: true };
+  }
   revalidatePath('/', 'layout');
-  redirect('/login');
+  redirect('/');
 }
