@@ -14,7 +14,7 @@ export function HeroSection() {
           Get insight from successful Whop products, and start your business.
         </p>
         <p className={'mt-2 text-[18px] leading-[27px] md:text-[20px] md:leading-[30px]'}>
-          Products count in our database: {<NumberTicker value={8123} />}
+          Products count in our database: {<NumberTicker value={4477} />}
         </p>
       </div>
     </section>
