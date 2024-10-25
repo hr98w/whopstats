@@ -62,7 +62,7 @@ export async function GET(request: Request) {
     // 添加 URL 后缀
     const modifiedData = data.map((item: Record<string, any>) => ({
       ...item,
-      url: item.url ? `${item.url}?a=indiehacker` : item.url,
+      url: item.url ? `${item.url}` : item.url,
     }));
 
     return NextResponse.json({
