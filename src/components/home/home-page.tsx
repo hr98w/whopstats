@@ -37,7 +37,7 @@ export function HomePage() {
           <Header user={user} />
 
           <HeroSection />
-          <div className="flex justify-center pt-12 pb-64">
+          <div className="flex justify-center pt-12 pb-72">
             <div className="flex space-x-4">
               <Button variant={'default'} asChild={true}>
                 <Link href={'/stats'}>Explore WhopStats</Link>
@@ -50,17 +50,6 @@ export function HomePage() {
               </Button>
             </div>
           </div>
-        </div>
-
-        <Separator className={'section-divider'} />
-
-        <div id="features" className="pb-24">
-          <div className="flex flex-col items-center pt-16">
-            <h2>
-              <SparklesText text="Features" className="text-center text-4xl" />
-            </h2>
-          </div>
-          <FeaturesSection />
         </div>
 
         <Separator className={'section-divider'} />
@@ -78,6 +67,17 @@ export function HomePage() {
             </p>
           </div>
           <ExampleTable />
+        </div>
+
+        <Separator className={'section-divider'} />
+
+        <div id="features" className="pb-24">
+          <div className="flex flex-col items-center pt-16">
+            <h2>
+              <SparklesText text="Features" className="text-center text-4xl" />
+            </h2>
+          </div>
+          <FeaturesSection />
         </div>
 
         <Separator className={'section-divider'} />
