@@ -15,7 +15,7 @@ export default async function Layout({ children }: Props) {
   }
 
   const isActiveSubscriber = await checkActiveSubscription();
-  redirect('/#pricing');
+
   if (!isActiveSubscriber) {
     redirect('/#pricing');
   }

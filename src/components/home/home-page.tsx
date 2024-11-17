@@ -63,7 +63,7 @@ export function HomePage() {
               This is an example of how the statistics will appear
             </p>
             <p className="text-large text-center text-default-600">
-              WhopStats contains over 8,000 Whop products, which we update on a weekly basis
+              WhopStats contains over 4,000 Whop products, and their rate, price, estimated sales.
             </p>
           </div>
           <ExampleTable />

@@ -9,8 +9,24 @@ import {
 } from '@paddle/paddle-node-sdk';
 import { createClient } from '@/utils/supabase/server-internal';
 
+type EventWithCustomData = EventEntity & {
+  data: {
+    customData?: {
+      domain?: string;
+    };
+  };
+};
+
 export class ProcessWebhook {
+  private hasDomainInCustomData(eventData: EventWithCustomData): boolean {
+    return Boolean(eventData.data?.customData?.domain && eventData.data.customData.domain === 'whopstats');
+  }
+
   async processEvent(eventData: EventEntity) {
+    if (!this.hasDomainInCustomData(eventData as EventWithCustomData)) {
+      console.log('Event does not have correct custom data', eventData);
+      return;
+    }
     switch (eventData.eventType) {
       case EventName.SubscriptionCreated:
       case EventName.SubscriptionUpdated:

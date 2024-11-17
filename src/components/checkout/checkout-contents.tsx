@@ -53,6 +53,9 @@ export function CheckoutContents({ userEmail }: Props) {
           paddle.Checkout.open({
             ...(userEmail && { customer: { email: userEmail } }),
             items: [{ priceId: priceId, quantity: 1 }],
+            customData: {
+              domain: 'whopstats',
+            },
           });
         }
       });
