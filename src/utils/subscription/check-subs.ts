@@ -1,7 +1,7 @@
 import { createClient } from '@/utils/supabase/server';
 import { getCustomerId } from '@/utils/paddle/get-customer-id';
 
-const LIFE_TIME_PRICE_ID = 'pri_01j9nqvh60r3k6axjm9h8q7c0v';
+const LIFE_TIME_PRICE_ID = 'pri_01jcwv8mwnx9kajk9ghnf6wqqe';
 export async function checkActiveSubscription(): Promise<boolean> {
   const supabase = createClient();
   const customerId = await getCustomerId();
