@@ -23,20 +23,22 @@ export class ProcessWebhook {
   }
 
   async processEvent(eventData: EventEntity) {
-    if (!this.hasDomainInCustomData(eventData as EventWithCustomData)) {
-      console.log('Event does not have correct custom data', eventData);
-      return;
-    }
     switch (eventData.eventType) {
-      case EventName.SubscriptionCreated:
-      case EventName.SubscriptionUpdated:
-        await this.updateSubscriptionData(eventData);
-        break;
       case EventName.CustomerCreated:
       case EventName.CustomerUpdated:
         await this.updateCustomerData(eventData);
         break;
+      case EventName.SubscriptionCreated:
+      case EventName.SubscriptionUpdated:
+        if (!this.hasDomainInCustomData(eventData as EventWithCustomData)) {
+          return;
+        }
+        await this.updateSubscriptionData(eventData);
+        break;
       case EventName.TransactionCompleted:
+        if (!this.hasDomainInCustomData(eventData as EventWithCustomData)) {
+          return;
+        }
         await this.updateTransactionData(eventData);
         break;
     }
